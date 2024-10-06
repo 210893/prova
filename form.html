@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From</title>
+    <style>
+        form{
+            width: fit-content;
+            margin: auto;
+        }
+        label{
+            display: inline-block;
+            width: 200px;
+            padding-left: 5px;
+            margin-bottom: 5px;
+        }
+        label::after{
+            content: ':';
+        }
+        #msg{
+            width: fit-content;
+            margin: auto;
+            line-height: 150px;
+            border: 1px solid green;
+            color: green;
+            font-weight: bold;
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        function controlla(){
+            //controllare che tutti i campi siano compilati
+            //se lo sono viene eguito il seguente codica
+            document.getElementById('form').style.display = 'none';
+            document.getElementById('msg').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <form id="form">
+        <h3>Invia la tua richiesta:</h3>
+        <label>Nome</label>
+        <input type="text" name="nome"><br>
+        <label>Indirizzo E-Mail</label>
+        <input type="text" name="eMail"><br>
+        <label>Oggetto della richiesta</label>
+        <input type="text" name="oggetto"><br>
+        <label>Messaggio</label><br>
+        <textarea name="msg" placeholder="scrivi qui il tuo messaggio" cols="50" rows="10"></textarea><br>
+        <input type="button" onclick="controlla()" value="invia">
+    </form>    
+    <div id="msg">
+        Grazie per averci scritto.
+    </div>
+</body>
+</html>
